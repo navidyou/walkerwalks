@@ -16,6 +16,10 @@ RUN tar -zxf "mujoco-2.1.1-linux-x86_64.tar.gz" -C "{MUJOCO_DIR}"
 ENV LD_LIBRARY_PATH='$HOME/.mujoco/mujoco211_linux/bin/'
 # ~/.mujoco/mujoco211_linux/bin/
 ENV MUJOCO_GL=glfw
+RUN set -xe \
+    && apt-get update -y \
+    && apt-get install - y python3-pip
+RUN pip install --upgrade pip
 RUN pip install  git+https://github.com/navidyou/dm_control.git#egg=dm_control>=0.0.416848645
 ENTRYPOINT ["python"]
 CMD ["main.py"]
