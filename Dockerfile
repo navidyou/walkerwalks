@@ -1,5 +1,6 @@
 FROM ubuntu:20.04
 # RUN apt-get update && apt-get install -qq -y libglew2.0
+RUN apt-get install wget
 RUN wget -q "https://github.com/deepmind/mujoco/releases/download/2.1.1/mujoco-2.1.1-linux-x86_64.tar.gz"
 RUN wget -q "https://github.com/deepmind/mujoco/releases/download/2.1.1/mujoco-2.1.1-linux-x86_64.tar.gz.sha256"
 ENV MUJOCO_DIR = '$HOME/.mujoco'
