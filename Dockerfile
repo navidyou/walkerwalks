@@ -1,6 +1,7 @@
 FROM ubuntu:20.04
 #FROM alpine:3.14
 #RUN apt-get update && apt-get install -qq -y libglew2.0
+ENV HOME /root
 ENV TZ=Canada/Pacific
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN apt-get update -y && apt-get install -y\
@@ -22,5 +23,6 @@ RUN set -xe \
 RUN pip install --upgrade pip
 #RUN pip install  git+https://github.com/navidyou/dm_control.git#egg=dm_control>=0.0.416848645
 RUN pip install -q dm_control>=0.0.416848645
+WORKDIR $HOME
 ENTRYPOINT ["python3"]
 CMD ["~/walkerwalks/main.py"]
