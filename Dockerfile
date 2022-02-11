@@ -25,4 +25,4 @@ RUN pip install --upgrade pip
 RUN pip install -q dm_control>=0.0.416848645
 WORKDIR $HOME
 ENTRYPOINT ["python3"]
-CMD ["~/walkerwalks/main.py"]
+CMD ["/walkerwalks/main.py"]
