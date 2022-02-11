@@ -18,7 +18,7 @@ ENV LD_LIBRARY_PATH='$HOME/.mujoco/mujoco211_linux/bin/'
 ENV MUJOCO_GL=glfw
 RUN set -xe \
     && apt-get update -y \
-    && apt-get install - y python3-pip
+    && apt-get install -y python3-pip
 RUN pip install --upgrade pip
 RUN pip install  git+https://github.com/navidyou/dm_control.git#egg=dm_control>=0.0.416848645
 ENTRYPOINT ["python"]
