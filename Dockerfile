@@ -1,6 +1,8 @@
 FROM ubuntu:20.04
 #FROM alpine:3.14
 #RUN apt-get update && apt-get install -qq -y libglew2.0
+ENV TZ=Canada/Pacific
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN apt-get update -y && apt-get install -y\
  default-jdk\
  libfindbin-libs-perl\
