@@ -1,10 +1,10 @@
-# FROM ubuntu:20.04
-FROM alpine:3.14
-RUN apt-get update && apt-get install -qq -y libglew2.0
-#RUN apt-get update -y && apt-get install -y\
-# default-jdk\
-# libfindbin-libs-perl\
-# unzip
+FROM ubuntu:20.04
+#FROM alpine:3.14
+#RUN apt-get update && apt-get install -qq -y libglew2.0
+RUN apt-get update -y && apt-get install -y\
+ default-jdk\
+ libfindbin-libs-perl\
+ unzip
 RUN wget -q "https://github.com/deepmind/mujoco/releases/download/2.1.1/mujoco-2.1.1-linux-x86_64.tar.gz"
 RUN wget -q "https://github.com/deepmind/mujoco/releases/download/2.1.1/mujoco-2.1.1-linux-x86_64.tar.gz.sha256"
 ENV MUJOCO_DIR = '$HOME/.mujoco'
