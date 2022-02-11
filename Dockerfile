@@ -22,5 +22,5 @@ RUN set -xe \
 RUN pip install --upgrade pip
 #RUN pip install  git+https://github.com/navidyou/dm_control.git#egg=dm_control>=0.0.416848645
 RUN pip install -q dm_control>=0.0.416848645
-ENTRYPOINT ["python"]
+ENTRYPOINT ["python3"]
 CMD ["main.py"]
