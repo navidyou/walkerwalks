@@ -1,7 +1,7 @@
 FROM ubuntu:20.04
 #FROM alpine:3.14
 #RUN apt-get update && apt-get install -qq -y libglew2.0
-ENV HOME /root
+#ENV HOME /root
 ENV TZ=Canada/Pacific
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN apt-get update -y && apt-get install -y\
@@ -25,5 +25,6 @@ RUN pip install --upgrade pip
 RUN pip install -q dm_control>=0.0.416848645
 COPY . /walkerwalks
 WORKDIR $HOME
+RUN echo $HOME
 ENTRYPOINT ["python3"]
 CMD ["/walkerwalks/main.py"]
