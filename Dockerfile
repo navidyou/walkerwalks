@@ -17,7 +17,7 @@ RUN tar -zxf "mujoco-2.1.1-linux-x86_64.tar.gz" -C "{MUJOCO_DIR}"
 ENV LD_LIBRARY_PATH='$HOME/.mujoco/mujoco211_linux/bin/'
 # ~/.mujoco/mujoco211_linux/bin/
 ENV MUJOCO_GL=glfw
-COPY . $HOME/.mujoco
+COPY $HOME/.mujoco $HOME
 RUN set -xe \
     && apt-get update -y \
     && apt-get install -y python3-pip
