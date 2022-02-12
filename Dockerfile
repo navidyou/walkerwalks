@@ -12,6 +12,7 @@ RUN set -xe \
     && apt-get update -y \
     && apt-get install -y python3-pip
 RUN pip install --upgrade pip
+COPY requirements.txt requirements.txt
 RUN pip3 install -r requirements.txt
 RUN apt-get install -y wget
 RUN wget -q "https://github.com/deepmind/mujoco/releases/download/2.1.1/mujoco-2.1.1-linux-x86_64.tar.gz"
