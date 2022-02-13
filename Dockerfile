@@ -8,7 +8,8 @@ RUN apt-get update -y && apt-get install -y\
  default-jdk\
  libfindbin-libs-perl\
  unzip
-RUN apt update && install curl
+RUN apt update 
+RUN apt install curl
 RUN set -xe \
     && apt-get update -y \
     && apt-get install -y python3-pip
