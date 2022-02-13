@@ -30,7 +30,7 @@ RUN mkdir -p ~/.mujoco \
 #RUN mkdir -p "{MUJOCO_DIR}"
 #RUN tar -zxf "mujoco-2.1.1-linux-x86_64.tar.gz" -C "{MUJOCO_DIR}"
 #ENV LD_LIBRARY_PATH='$HOME/.mujoco/mujoco211_linux/bin/'
-ENV LD_LIBRARY_PATH='~/.mujoco/mujoco211_linux/bin/'
+#ENV LD_LIBRARY_PATH='~/.mujoco/mujoco211_linux/bin/'
 # ~/.mujoco/mujoco211_linux/bin/
 ENV MUJOCO_GL=glfw
 #COPY $HOME/.mujoco $HOME
