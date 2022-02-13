@@ -7,9 +7,8 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN apt-get update -y && apt-get install -y\
  default-jdk\
  libfindbin-libs-perl\
- unzip
-RUN apt update 
-RUN apt install curl
+ unzip\
+ curl
 RUN set -xe \
     && apt-get update -y \
     && apt-get install -y python3-pip
