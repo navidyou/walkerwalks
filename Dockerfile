@@ -18,6 +18,7 @@ RUN set -xe \
 RUN pip3 install --upgrade pip
 COPY requirements.txt requirements.txt
 RUN pip3 install -r requirements.txt
+RUN pip3 install Flask
 RUN mkdir -p ~/.mujoco \
     && curl -SL https://github.com/deepmind/mujoco/releases/download/2.1.1/mujoco-2.1.1-linux-x86_64.tar.gz \
      | tar -zxC ~/.mujoco
