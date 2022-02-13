@@ -17,7 +17,7 @@ COPY requirements.txt requirements.txt
 RUN pip3 install -r requirements.txt
 RUN mkdir -p ~/.mujoco \
     && curl -SL https://github.com/deepmind/mujoco/releases/download/2.1.1/mujoco-2.1.1-linux-x86_64.tar.gz \
-     | tar -x ~/.mujoco
+     | tar -z ~/.mujoco
 #    | tar -zxf ~/.mujoco
 #    | tar -xJC ~/.mujoco
 #RUN apt-get install -y wget
