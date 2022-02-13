@@ -8,8 +8,8 @@ RUN apt-get update -y && apt-get install -y\
  default-jdk\
  libfindbin-libs-perl\
  unzip\
- curl\
- libglew2.0
+ curl
+RUN apt-get install -qq -y --no-install-recommends libglew2.0
 RUN set -xe \
     && apt-get update -y \
     && apt-get install -y python3-pip
