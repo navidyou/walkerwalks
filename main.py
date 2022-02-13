@@ -5,8 +5,8 @@ import numpy as np
 #from absl import app
 from flask import Flask
 
- env = suite.load(domain_name="humanoid", task_name="stand")
- action_spec = env.action_spec()
+env = suite.load(domain_name="humanoid", task_name="stand")
+action_spec = env.action_spec()
 
 # Define a uniform random policy.
 def random_policy(time_step):
