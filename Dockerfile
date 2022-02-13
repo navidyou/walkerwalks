@@ -38,7 +38,7 @@ ENV MUJOCO_GL=glfw
 #RUN pip install  git+https://github.com/navidyou/dm_control.git#egg=dm_control>=0.0.416848645
 RUN pip install -q dm_control>=0.0.416848645
 COPY . /walkerwalks
-WORKDIR $HOME
-RUN echo $HOME
+#WORKDIR $HOME
+#RUN echo $HOME
 ENTRYPOINT ["python3"]
 CMD ["/walkerwalks/main.py"]
