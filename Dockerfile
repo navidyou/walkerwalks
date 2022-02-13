@@ -14,16 +14,20 @@ RUN set -xe \
 RUN pip install --upgrade pip
 COPY requirements.txt requirements.txt
 RUN pip3 install -r requirements.txt
-RUN apt-get install -y wget
-RUN wget -q "https://github.com/deepmind/mujoco/releases/download/2.1.1/mujoco-2.1.1-linux-x86_64.tar.gz"
-RUN wget -q "https://github.com/deepmind/mujoco/releases/download/2.1.1/mujoco-2.1.1-linux-x86_64.tar.gz.sha256"
-ENV MUJOCO_DIR = '$HOME/.mujoco'
-RUN mkdir -p "{MUJOCO_DIR}"
-RUN tar -zxf "mujoco-2.1.1-linux-x86_64.tar.gz" -C "{MUJOCO_DIR}"
-ENV LD_LIBRARY_PATH='$HOME/.mujoco/mujoco211_linux/bin/'
+RUN mkdir -p ~/.mujoco \
+    && curl -SL https://github.com/deepmind/mujoco/releases/download/2.1.1/mujoco-2.1.1-linux-x86_64.tar.gz \
+    | tar -xJC ~/.mujoco
+#RUN apt-get install -y wget
+#RUN wget -q "https://github.com/deepmind/mujoco/releases/download/2.1.1/mujoco-2.1.1-linux-x86_64.tar.gz"
+#RUN wget -q "https://github.com/deepmind/mujoco/releases/download/2.1.1/mujoco-2.1.1-linux-x86_64.tar.gz.sha256"
+#ENV MUJOCO_DIR = '$HOME/.mujoco'
+#RUN mkdir -p "{MUJOCO_DIR}"
+#RUN tar -zxf "mujoco-2.1.1-linux-x86_64.tar.gz" -C "{MUJOCO_DIR}"
+#ENV LD_LIBRARY_PATH='$HOME/.mujoco/mujoco211_linux/bin/'
+ENV LD_LIBRARY_PATH='~/.mujoco/mujoco211_linux/bin/'
 # ~/.mujoco/mujoco211_linux/bin/
 ENV MUJOCO_GL=glfw
-COPY $HOME/.mujoco $HOME
+#COPY $HOME/.mujoco $HOME
 #RUN pip install  git+https://github.com/navidyou/dm_control.git#egg=dm_control>=0.0.416848645
 RUN pip install -q dm_control>=0.0.416848645
 COPY . /walkerwalks
