@@ -1,4 +1,5 @@
-FROM ubuntu:20.04
+FROM ubuntu:18.04
+#FROM ubuntu:20.04
 #FROM alpine:3.14
 #RUN apt-get update && apt-get install -qq -y libglew2.0
 #ENV HOME /root
@@ -8,8 +9,9 @@ RUN apt-get update -y && apt-get install -y\
  default-jdk\
  libfindbin-libs-perl\
  unzip\
- curl
-RUN apt-get install -qq -y --no-install-recommends libglew2.0
+ curl\
+ libglew2.0
+#RUN apt-get install -qq -y --no-install-recommends libglew2.0
 RUN set -xe \
     && apt-get update -y \
     && apt-get install -y python3-pip
