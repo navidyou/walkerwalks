@@ -10,7 +10,8 @@ RUN apt-get update -y && apt-get install -y\
  libfindbin-libs-perl\
  unzip\
  curl\
- libglew2.0
+ libglew2.0\
+ libglfw3-dev
 #RUN apt-get install -qq -y --no-install-recommends libglew2.0
 RUN set -xe \
     && apt-get update -y \
@@ -19,7 +20,7 @@ RUN pip3 install --upgrade pip
 COPY requirements.txt requirements.txt
 RUN pip3 install -r requirements.txt
 RUN pip3 install Flask
-RUN apt-get install libglfw3-dev
+#RUN apt-get install libglfw3-dev
 RUN mkdir -p ~/.mujoco \
     && curl -SL https://github.com/deepmind/mujoco/releases/download/2.1.1/mujoco-2.1.1-linux-x86_64.tar.gz \
      | tar -zxC ~/.mujoco
