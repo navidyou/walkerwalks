@@ -1,6 +1,8 @@
 FROM ubuntu:18.04
 #FROM ubuntu:20.04
 #FROM alpine:3.14
+FROM nvidia/cuda:10.2-base
+CMD nvidia-smi
 #RUN apt-get update && apt-get install -qq -y libglew2.0
 #ENV HOME /root
 ENV TZ=Canada/Pacific
