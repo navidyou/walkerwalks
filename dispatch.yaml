@@ -1,3 +1,2 @@
 dispatch:
-  - url: "www.livingrobo.com/*"
-    service: tactile-catcher-340705
+    runtime: python3
