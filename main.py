@@ -20,8 +20,8 @@ app = Flask(__name__)
 
 @app.route('/')
 def main():
-  viewer.launch(env, policy=random_policy)
-#  return 'Hello, World!'
+  #viewer.launch(env, policy=random_policy)
+  return 'The living robo is getting prepared!'
 
 
 #env = suite.load(domain_name="humanoid", task_name="stand")
